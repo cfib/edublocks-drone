@@ -1,0 +1,15 @@
+<category name="ledmatrix" colour="#1DB954" css-icon="customIcon fas fa-drone">
+    <label text="Drone"></label>
+
+    <block type="init"></block>
+
+    <block type="start_game"></block>
+
+    <block type="ascend"></block>
+    
+    <block type="descend"></block>
+    
+    <block type="move"></block>
+    
+    <block type="plant_tree"></block>
+</category>
