@@ -1,7 +1,19 @@
 const droneColor = "#1DB954";
 
-Blockly.Blocks['init'] = {
+Blockly.Blocks['init_drone'] = {
     init: function() {
+     this.appendDummyInput()
+          .appendField("Initialize Drone");
+      this.setPreviousStatement(true, null);
+      this.setNextStatement(true, null);
+      this.setColour(droneColor);
+    }
+};
+
+Blockly.Blocks['start_game'] = {
+    init: function() {
+     this.appendDummyInput()
+          .appendField("Start Game");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(droneColor);
@@ -10,6 +22,8 @@ Blockly.Blocks['init'] = {
 
 Blockly.Blocks['plant_tree'] = {
     init: function() {
+      this.appendDummyInput()
+          .appendField("Plant Tree");
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(droneColor);
@@ -19,7 +33,9 @@ Blockly.Blocks['plant_tree'] = {
 Blockly.Blocks['ascend'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldVariable("duration"), "duration"));
+          .appendField("ascend for")
+          .appendField(new Blockly.FieldNumber(1), "duration");
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(droneColor);
@@ -29,7 +45,9 @@ Blockly.Blocks['ascend'] = {
 Blockly.Blocks['descend'] = {
     init: function() {
       this.appendDummyInput()
-          .appendField(new Blockly.FieldVariable("duration"), "duration"));
+          .appendField("descend for")
+          .appendField(new Blockly.FieldNumber(1), "duration");
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(droneColor);
@@ -39,8 +57,11 @@ Blockly.Blocks['descend'] = {
 Blockly.Blocks['move'] = {
     init: function() {
       this.appendDummyInput()
+          .appendField("move")
           .appendField(new Blockly.FieldDropdown([["North","N"], ["North East","NE"], ["East","E"], ["South East","SE"], ["South","S"], ["South West","SW"], ["West","W"], ["North West","NW"]]), "direction")
-          .appendField(new Blockly.FieldVariable("duration"), "duration"));
+          .appendField("for")
+          .appendField(new Blockly.FieldNumber(1), "duration");
+      this.setInputsInline(true);
       this.setPreviousStatement(true, null);
       this.setNextStatement(true, null);
       this.setColour(droneColor);

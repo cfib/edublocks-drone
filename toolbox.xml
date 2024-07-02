@@ -1,7 +1,7 @@
-<category name="ledmatrix" colour="#1DB954" css-icon="customIcon fas fa-drone">
+<category name="Drone" colour="#1DB954" css-icon="customIcon fas fa-drone">
     <label text="Drone"></label>
 
-    <block type="init"></block>
+    <block type="init_drone"></block>
 
     <block type="start_game"></block>
 

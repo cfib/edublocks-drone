@@ -81,18 +81,18 @@ class LedMatrix:
     def start_game(self):
         if self.get_game_state() == LedMatrixGameState.GAME_STATE_GAME:
             # stop current game
-            ledmatrix.push_key(LedMatrixButtonPress.BUTTON_ONE | LedMatrixButtonPress.BUTTON_TWO)
+            self.push_key(LedMatrixButtonPress.BUTTON_ONE | LedMatrixButtonPress.BUTTON_TWO)
             # reset game
-            ledmatrix.push_key(LedMatrixButtonPress.BUTTON_A)
+            self.push_key(LedMatrixButtonPress.BUTTON_A)
         elif self.get_game_state() == LedMatrixGameState.GAME_STATE_FINAL:
             # reset game
-            ledmatrix.push_key(LedMatrixButtonPress.BUTTON_A)
+            self.push_key(LedMatrixButtonPress.BUTTON_A)
         elif self.get_game_state() == LedMatrixGameState.GAME_STATE_RESET_PLAYFIELD:
             time.sleep(0.1) # will be in GAME_STATE_WAIT_START immediately
             assert(self.get_game_state() == LedMatrixGameState.GAME_STATE_WAIT_START)
         elif self.get_game_state() == LedMatrixGameState.GAME_STATE_WAIT_START:
             pass
-        ledmatrix.push_key(LedMatrixButtonPress.BUTTON_A)
+        self.push_key(LedMatrixButtonPress.BUTTON_A)
         time.sleep(0.2)
         assert(self.get_game_state() == LedMatrixGameState.GAME_STATE_GAME), self.get_game_state()
         
